@@ -2,14 +2,17 @@
 import { Module } from '@nestjs/common';
 import { TelegrafModule } from '@nestjs/platform-telegram';
 import { BotController } from './bot.controller';
+import { WeatherService } from './weather.service';
+import { UserService } from './user.service';
+import { DatabaseService } from './database.service'; 
 
 @Module({
   imports: [
     TelegrafModule.forRoot({
-      token: 'YOUR_BOT_TOKEN', // Replace with your bot token
+      token: process.env.BOT_TOKEN || 'your_default_fake_bot_token',
     }),
   ],
   controllers: [BotController],
-  providers: [], // You can add providers (services) here for more complex functionality
+  providers: [WeatherService, UserService, DatabaseService], 
 })
 export class BotModule {}
