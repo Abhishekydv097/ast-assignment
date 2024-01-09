@@ -17,7 +17,6 @@ This is a simple weather bot for the Telegram.
 
 - Node.js
 - npm
-- Telegram bot token (create a new bot on Telegram and obtain the token)
 
 ### Installation
 
